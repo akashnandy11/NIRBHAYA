@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 98%;
+    
+    --primary-glow: 330 100% 70%;
+    --primary-dark: 330 100% 50%;
+
+    --secondary: 0 100% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 350 100% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+    
+    --emergency: 0 100% 60%;
+    --emergency-glow: 0 100% 70%;
+    
+    --safe: 120 100% 50%;
+    --safe-glow: 120 100% 60%;
+    
+    --warning: 50 100% 50%;
+    --warning-glow: 50 100% 60%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 330 100% 60%;
+
+    --radius: 0.75rem;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(330 100% 60%) 0%, hsl(0 100% 50%) 100%);
+    --gradient-safe: linear-gradient(135deg, hsl(120 100% 50%) 0%, hsl(160 100% 50%) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(350 100% 60%) 100%);
+    
+    --shadow-soft: 0 4px 20px -2px hsl(330 100% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(330 100% 60% / 0.5);
+    --shadow-emergency: 0 0 40px hsl(0 100% 50% / 0.6);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 330 100% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 330 100% 60%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 98%;
+    
+    --primary-glow: 330 100% 70%;
+    --primary-dark: 330 100% 50%;
+
+    --secondary: 0 100% 50%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 350 100% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+    
+    --emergency: 0 100% 60%;
+    --emergency-glow: 0 100% 70%;
+    
+    --safe: 120 100% 50%;
+    --safe-glow: 120 100% 60%;
+    
+    --warning: 50 100% 50%;
+    --warning-glow: 50 100% 60%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 330 100% 60%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(330 100% 60%) 0%, hsl(0 100% 50%) 100%);
+    --gradient-safe: linear-gradient(135deg, hsl(120 100% 50%) 0%, hsl(160 100% 50%) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(350 100% 60%) 100%);
+    
+    --shadow-soft: 0 4px 20px -2px hsl(330 100% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(330 100% 60% / 0.5);
+    --shadow-emergency: 0 0 40px hsl(0 100% 50% / 0.6);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 330 100% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 330 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: radial-gradient(ellipse at top, hsl(330 100% 10% / 0.2), transparent),
+                radial-gradient(ellipse at bottom, hsl(0 100% 10% / 0.2), transparent),
+                hsl(var(--background));
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-safe {
+    background: var(--gradient-safe);
+  }
+  
+  .gradient-emergency {
+    background: var(--gradient-emergency);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-emergency {
+    box-shadow: var(--shadow-emergency);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  @keyframes pulse-emergency {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .animate-pulse-emergency {
+    animation: pulse-emergency 2s ease-in-out infinite;
+  }
+  
+  .animate-ripple {
+    animation: ripple 1.5s ease-out infinite;
+  }
+}
